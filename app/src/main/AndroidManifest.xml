@@ -11,8 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Day2Day">
-
-
+        <activity
+            android:name=".AddMedicalConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalPersonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddMedicalDocumentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VehicleDocumentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddVehicleDocumentActivity"
+            android:exported="false" />
         <activity android:name=".AddDocumentActivity" />
         <activity android:name=".DocumentsActivity" />
         <activity android:name=".AddMedicalActivity" />
@@ -21,6 +37,9 @@
         <activity android:name=".ProductActivity" />
         <activity android:name=".AddVehicleActivity" />
         <activity android:name=".VehicleActivity" />
+        <activity android:name=".VehicleExpiryActivity" />
+        <activity android:name=".AddServiceActivity" />
+        <activity android:name=".ServiceHistoryActivity" />
 
 
 
@@ -35,6 +54,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

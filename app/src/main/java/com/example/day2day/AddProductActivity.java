@@ -9,10 +9,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class AddProductActivity extends AppCompatActivity {
 
-    EditText productName, brand, model, purchaseDate, price, warranty;
+    EditText productName;
+    EditText brand;
+    EditText model;
+    EditText purchaseDate;
+    EditText price;
+    EditText warranty;
+
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,99 +35,139 @@ public class AddProductActivity extends AppCompatActivity {
         price = findViewById(R.id.price);
         warranty = findViewById(R.id.warranty);
 
-        Button saveButton = findViewById(R.id.saveProductButton);
+        Button saveProductButton =
+                findViewById(R.id.saveProductButton);
 
-        purchaseDate.setOnClickListener(v -> showDatePicker());
+        databaseHelper =
+                new DatabaseHelper(this);
 
-        saveButton.setOnClickListener(v -> saveProduct());
-    }
 
-    private void showDatePicker() {
+        // Purchase Date
+        purchaseDate.setOnClickListener(v -> {
 
-        Calendar calendar = Calendar.getInstance();
+            Calendar calendar = Calendar.getInstance();
 
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog dialog =
+                    new DatePickerDialog(
+                            this,
+                            (view, year, month, dayOfMonth) -> {
 
-        DatePickerDialog dialog = new DatePickerDialog(
-                this,
-                (view, selectedYear, selectedMonth, selectedDay) -> {
+                                String date =
+                                        String.format(
+                                                Locale.getDefault(),
+                                                "%02d/%02d/%04d",
+                                                dayOfMonth,
+                                                month + 1,
+                                                year
+                                        );
 
-                    String date = selectedDay + "/" +
-                            (selectedMonth + 1) + "/" +
-                            selectedYear;
+                                purchaseDate.setText(date);
+                            },
+                            calendar.get(Calendar.YEAR),
+                            calendar.get(Calendar.MONTH),
+                            calendar.get(Calendar.DAY_OF_MONTH)
+                    );
 
-                    purchaseDate.setText(date);
-                },
-                year,
-                month,
-                day
-        );
+            dialog.show();
+        });
 
-        dialog.show();
-    }
 
-    private void saveProduct() {
+        // Warranty Expiry Date
+        warranty.setOnClickListener(v -> {
 
-        String name = productName.getText().toString().trim();
-        String brandName = brand.getText().toString().trim();
-        String modelName = model.getText().toString().trim();
-        String date = purchaseDate.getText().toString().trim();
-        String productPrice = price.getText().toString().trim();
-        String warrantyPeriod = warranty.getText().toString().trim();
+            Calendar calendar = Calendar.getInstance();
 
-        if (name.isEmpty()) {
-            productName.setError("Enter product name");
-            productName.requestFocus();
-            return;
-        }
+            DatePickerDialog dialog =
+                    new DatePickerDialog(
+                            this,
+                            (view, year, month, dayOfMonth) -> {
 
-        if (brandName.isEmpty()) {
-            brand.setError("Enter brand");
-            brand.requestFocus();
-            return;
-        }
+                                String date =
+                                        String.format(
+                                                Locale.getDefault(),
+                                                "%02d/%02d/%04d",
+                                                dayOfMonth,
+                                                month + 1,
+                                                year
+                                        );
 
-        if (date.isEmpty()) {
-            purchaseDate.setError("Select purchase date");
-            return;
-        }
+                                warranty.setText(date);
+                            },
+                            calendar.get(Calendar.YEAR),
+                            calendar.get(Calendar.MONTH),
+                            calendar.get(Calendar.DAY_OF_MONTH)
+                    );
 
-        if (warrantyPeriod.isEmpty()) {
-            warranty.setError("Enter warranty period");
-            warranty.requestFocus();
-            return;
-        }
+            dialog.show();
+        });
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
-        boolean inserted = databaseHelper.addProduct(
-                name,
-                brandName,
-                modelName,
-                date,
-                productPrice,
-                warrantyPeriod
-        );
+        // Save Product
+        saveProductButton.setOnClickListener(v -> {
 
-        if (inserted) {
+            String name =
+                    productName.getText().toString().trim();
 
-            Toast.makeText(
-                    this,
-                    "Product saved successfully!",
-                    Toast.LENGTH_SHORT
-            ).show();
+            String brandName =
+                    brand.getText().toString().trim();
 
-            finish();
+            String modelNumber =
+                    model.getText().toString().trim();
 
-        } else {
+            String purchase =
+                    purchaseDate.getText().toString().trim();
 
-            Toast.makeText(
-                    this,
-                    "Failed to save product",
-                    Toast.LENGTH_SHORT
-            ).show();
-        }
+            String productPrice =
+                    price.getText().toString().trim();
+
+            String warrantyDate =
+                    warranty.getText().toString().trim();
+
+
+            if (name.isEmpty() ||
+                    brandName.isEmpty() ||
+                    purchase.isEmpty() ||
+                    warrantyDate.isEmpty()) {
+
+                Toast.makeText(
+                        this,
+                        "Please fill all required fields",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+                return;
+            }
+
+
+            boolean inserted =
+                    databaseHelper.addProduct(
+                            name,
+                            brandName,
+                            modelNumber,
+                            purchase,
+                            productPrice,
+                            warrantyDate
+                    );
+
+
+            if (inserted) {
+
+                Toast.makeText(
+                        this,
+                        "Product saved successfully",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+                finish();
+
+            } else {
+
+                Toast.makeText(
+                        this,
+                        "Failed to save product",
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+        });
     }
 }

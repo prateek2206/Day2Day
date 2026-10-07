@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Vehicle"
+            android:text="Vehicle Expiry"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#222222" />
@@ -24,35 +24,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Enter your vehicle details."
+            android:text="Documents that need your attention"
             android:textSize="14sp"
             android:textColor="#666666" />
 
-        <EditText
-            android:id="@+id/vehicleName"
+        <LinearLayout
+            android:id="@+id/vehicleExpiryContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Vehicle Name / Model"
-            android:inputType="text"
-            android:padding="15dp" />
-
-        <EditText
-            android:id="@+id/vehicleNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Vehicle Number"
-            android:inputType="text"
-            android:padding="15dp" />
-
-        <Button
-            android:id="@+id/saveVehicleButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="25dp"
-            android:text="Save Vehicle"
-            android:textSize="16sp" />
+            android:orientation="vertical" />
 
     </LinearLayout>
 

@@ -65,6 +65,18 @@
             android:clickable="true"
             android:padding="15dp" />
 
+        <!-- NEW: Reminder Date -->
+
+        <EditText
+            android:id="@+id/reminderDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Reminder Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:padding="15dp" />
+
         <EditText
             android:id="@+id/notes"
             android:layout_width="match_parent"

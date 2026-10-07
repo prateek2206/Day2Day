@@ -1,160 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:fillViewport="true"
+    android:background="@drawable/home_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="16dp">
 
-        <!-- App Name -->
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- D2D -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="start|center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D2D"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#10243E"
+                android:letterSpacing="0.08"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:background="@drawable/d2d_glass_background"
+                android:elevation="5dp" />
+
+        </LinearLayout>
+
+
+        <!-- CRITICAL ALERT -->
+        <LinearLayout
+            android:id="@+id/criticalAlertCard"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Day2Day"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#1A1A1A" />
+            android:layout_marginTop="12dp"
+            android:padding="18dp"
+            android:orientation="vertical"
+            android:background="@drawable/glass_alert_background"
+            android:elevation="8dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔔  Critical Alert"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#10243E" />
+
+            <TextView
+                android:id="@+id/criticalAlertText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="No critical reminders"
+                android:textSize="14sp"
+                android:textColor="#26384D" />
+
+        </LinearLayout>
+
+
+        <!-- SPACE -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+
+        <!-- TOP ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Your life, organized."
-            android:textSize="16sp"
-            android:textColor="#666666" />
+            android:orientation="horizontal">
 
-        <!-- Space -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            <!-- MEDICAL -->
+            <LinearLayout
+                android:id="@+id/medicalCard"
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:padding="18dp"
+                android:orientation="vertical"
+                android:background="@drawable/glass_medical_background"
+                android:elevation="8dp">
 
-        <!-- Product Card -->
-        <LinearLayout
-            android:id="@+id/productCard"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="vertical"
-            android:padding="18dp"
-            android:background="@drawable/card_background"
-            android:clickable="true"
-            android:focusable="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medical Cabinet"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#10243E" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🧾  Product &amp; Warranty"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#222222" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Prescriptions, reports\nand medical records"
+                    android:textSize="14sp"
+                    android:textColor="#26384D" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Store bills, invoices and warranty details"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                <TextView
+                    android:id="@+id/medicalReminderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="No reminders"
+                    android:textSize="13sp"
+                    android:textColor="#26384D" />
 
-        </LinearLayout>
-
-
-        <!-- Medical Card -->
-        <LinearLayout
-            android:id="@+id/medicalCard"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical"
-            android:padding="18dp"
-            android:background="@drawable/card_background"
-            android:clickable="true"
-            android:focusable="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🏥  Medical Cabinet"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#222222" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Prescriptions, reports and vaccination records"
-                android:textSize="14sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
+            </LinearLayout>
 
 
-        <!-- Vehicle Card -->
-        <LinearLayout
-            android:id="@+id/vehicleCard"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical"
-            android:padding="18dp"
-            android:background="@drawable/card_background"
-            android:clickable="true"
-            android:focusable="true">
+            <!-- PRODUCT -->
+            <LinearLayout
+                android:id="@+id/productCard"
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:padding="18dp"
+                android:orientation="vertical"
+                android:background="@drawable/glass_product_background"
+                android:elevation="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🚗  Vehicle Manager"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#222222" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product &amp; Warranty"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#10243E" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Service, insurance, PUC and fuel tracking"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Bills, invoices and\nwarranty details"
+                    android:textSize="14sp"
+                    android:textColor="#26384D" />
+
+                <TextView
+                    android:id="@+id/productReminderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="No reminders"
+                    android:textSize="13sp"
+                    android:textColor="#26384D" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
 
-        <!-- Documents Card -->
-        <LinearLayout
-            android:id="@+id/documentsCard"
+        <!-- SPACE -->
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical"
-            android:padding="18dp"
-            android:background="@drawable/card_background"
-            android:clickable="true"
-            android:focusable="true">
+            android:layout_height="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="📁  My Documents"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#222222" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="View and manage all your saved documents"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+        <!-- BOTTOM ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- VEHICLE -->
+            <LinearLayout
+                android:id="@+id/vehicleCard"
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:padding="18dp"
+                android:orientation="vertical"
+                android:background="@drawable/glass_vehicle_background"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle Manager"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#10243E" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="RC, insurance, PUC\nand service history"
+                    android:textSize="14sp"
+                    android:textColor="#26384D" />
+
+                <TextView
+                    android:id="@+id/vehicleReminderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="No reminders"
+                    android:textSize="13sp"
+                    android:textColor="#26384D" />
+
+            </LinearLayout>
+
+
+            <!-- DOCUMENTS -->
+            <LinearLayout
+                android:id="@+id/documentsCard"
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:padding="18dp"
+                android:orientation="vertical"
+                android:background="@drawable/glass_documents_background"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Documents"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#10243E" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Store important\npersonal documents"
+                    android:textSize="14sp"
+                    android:textColor="#26384D" />
+
+                <TextView
+                    android:id="@+id/documentsReminderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="No reminders"
+                    android:textSize="13sp"
+                    android:textColor="#26384D" />
+
+            </LinearLayout>
 
         </LinearLayout>
+
+
+        <!-- BOTTOM SPACE -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
     </LinearLayout>
 

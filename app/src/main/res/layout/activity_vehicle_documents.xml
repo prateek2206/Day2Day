@@ -15,46 +15,47 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product &amp; Warranty"
+            android:text="Vehicle Documents"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#222222" />
 
         <TextView
+            android:id="@+id/vehicleDocumentSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Keep your products and warranty details safe."
+            android:text="Manage your vehicle documents"
             android:textSize="14sp"
             android:textColor="#666666" />
 
         <Button
-            android:id="@+id/addProductButton"
+            android:id="@+id/addVehicleDocumentButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="25dp"
-            android:text="+ Add Product"
+            android:text="+ Add Document"
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/addProductDocumentButton"
+            android:id="@+id/serviceHistoryButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="12dp"
-            android:text="+ Add Document"
+            android:text="🔧 Service History"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Saved Products"
+            android:text="Documents"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#222222" />
 
         <LinearLayout
-            android:id="@+id/productContainer"
+            android:id="@+id/vehicleDocumentsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

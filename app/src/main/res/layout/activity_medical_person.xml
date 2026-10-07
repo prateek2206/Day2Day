@@ -13,48 +13,42 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/medicalPersonTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product &amp; Warranty"
+            android:text="Person"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#222222" />
 
         <TextView
+            android:id="@+id/medicalPersonSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Keep your products and warranty details safe."
+            android:text="Manage medical conditions"
             android:textSize="14sp"
             android:textColor="#666666" />
 
         <Button
-            android:id="@+id/addProductButton"
+            android:id="@+id/addConditionButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="25dp"
-            android:text="+ Add Product"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/addProductDocumentButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="12dp"
-            android:text="+ Add Document"
+            android:text="+ Add Medical Condition"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Saved Products"
+            android:text="Medical Conditions"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#222222" />
 
         <LinearLayout
-            android:id="@+id/productContainer"
+            android:id="@+id/conditionContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

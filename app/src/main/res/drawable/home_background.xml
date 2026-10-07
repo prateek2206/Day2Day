@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base -->
+    <item>
+        <shape>
+            <solid android:color="#E8F5FF"/>
+        </shape>
+    </item>
+
+    <!-- HOT PINK -->
+    <item
+        android:width="520dp"
+        android:height="520dp"
+        android:gravity="top|start"
+        android:left="-170dp"
+        android:top="-120dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="420dp"
+                android:startColor="#FFFF1493"
+                android:centerColor="#CCFF4FB3"
+                android:endColor="#00FF4FB3"/>
+        </shape>
+    </item>
+
+    <!-- ELECTRIC PURPLE -->
+    <item
+        android:width="550dp"
+        android:height="550dp"
+        android:gravity="top|end"
+        android:right="-180dp"
+        android:top="-80dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="430dp"
+                android:startColor="#FF7A00FF"
+                android:centerColor="#CC9B4DFF"
+                android:endColor="#009B4DFF"/>
+        </shape>
+    </item>
+
+    <!-- BRIGHT CYAN -->
+    <item
+        android:width="560dp"
+        android:height="560dp"
+        android:gravity="center|start"
+        android:left="-210dp"
+        android:top="170dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="440dp"
+                android:startColor="#FF00E5FF"
+                android:centerColor="#CC25DFFF"
+                android:endColor="#0025DFFF"/>
+        </shape>
+    </item>
+
+    <!-- ELECTRIC BLUE -->
+    <item
+        android:width="540dp"
+        android:height="540dp"
+        android:gravity="center|end"
+        android:right="-190dp"
+        android:top="250dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="430dp"
+                android:startColor="#FF0057FF"
+                android:centerColor="#CC3F7CFF"
+                android:endColor="#003F7CFF"/>
+        </shape>
+    </item>
+
+    <!-- VIBRANT YELLOW -->
+    <item
+        android:width="500dp"
+        android:height="500dp"
+        android:gravity="bottom|start"
+        android:left="-150dp"
+        android:bottom="-180dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="400dp"
+                android:startColor="#FFFFD000"
+                android:centerColor="#CCFFE45C"
+                android:endColor="#00FFE45C"/>
+        </shape>
+    </item>
+
+    <!-- ORANGE / PINK -->
+    <item
+        android:width="560dp"
+        android:height="560dp"
+        android:gravity="bottom|end"
+        android:right="-190dp"
+        android:bottom="-190dp">
+
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="430dp"
+                android:startColor="#FFFF3D00"
+                android:centerColor="#CCFF6B35"
+                android:endColor="#00FF6B35"/>
+        </shape>
+    </item>
+
+</layer-list>
